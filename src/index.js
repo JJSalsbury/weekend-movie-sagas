@@ -14,7 +14,8 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-    yield takeEvery('FETCH_DETAILS', fetchDetails);
+    yield takeEvery('GET_DETAILS', getDetails);
+    // yield takeEvery('GET_GENRES', getGenres);
 }
 
 function* fetchAllMovies() {
@@ -30,18 +31,28 @@ function* fetchAllMovies() {
         
 }
 
-function* fetchDetails(action) {
-    // get all movies from the DB
-    const details = action.payload;
+function* getDetails(action) {
+    // get all details from the DB
     try {
-        const response = yield axios.get(`/api/movie/details/{details}`);
+        const response = yield axios.get(`/api/movie/${action.payload}`);
         yield put({ type: 'SET_DETAILS', payload: response });
 
-    } catch {
-        console.log('fetch details error');
+    } catch(error) {
+        console.log('getFetch error:', error);
     }
         
 }
+
+// function* getGenres(action) {
+//     const genres = action.payload;
+//     try {
+//         let response = yield axios.get(`/api/genre/${genres}`)
+//         console.log('response.data getGenres:', response.data);
+//         yield put({type: 'SET_GENRES', payload: response.data});
+//     } catch {
+//         console.log('getGenres error');
+//     }
+// }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -53,8 +64,8 @@ const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;
-        case 'SET_DETAILS':
-            return action.payload;
+        // case 'SET_DETAILS':
+        //     return action.payload;
         default:
             return state;
     }
@@ -70,14 +81,14 @@ const genres = (state = [], action) => {
     }
 }
 
-// const details = (state=[], action) => {
-//         switch (action.type) {
-//             case 'SET_DETAILS':
-//                 return action.payload;
-//             default:
-//                 return state;
-//         }
-//     }
+const details = (state=[], action) => {
+        switch (action.type) {
+            case 'SET_DETAILS':
+                return action.payload.data[0];
+            default:
+                return state;
+        }
+    }
 
 // Create one store that all components can use
 const storeInstance = createStore(

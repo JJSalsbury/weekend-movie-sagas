@@ -9,12 +9,12 @@ function MovieItem({movie}) {
 
     const history = useHistory()
 
-    console.log('movie:', movie);
+    // console.log('movie:', movie);
 
-    const handleMovies = () => {
-        console.log('clicked for movie details (description)', console.log());
+    const handleNext = () => {
+        // console.log('clicked for movie details (description)');
         dispatch({type: 'GET_DETAILS', payload: movie.id});
-        history.push('/details');
+        history.push('/detail');
     }
 
     return(
@@ -23,7 +23,7 @@ function MovieItem({movie}) {
                 <h3>{movie.title}</h3>
                 <img 
                 src={movie.poster} alt={movie.title}
-                onClick={handleMovies}/>
+                onClick={handleNext}/>
             </div>
         </>
         )

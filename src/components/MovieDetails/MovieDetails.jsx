@@ -1,42 +1,29 @@
 
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function MovieDetails() {
 
-    const dispatch = useDispatch();
-    const description = useSelector(store => store.details);
-    console.log(description);
-
-    let genres = [];
-
-    if (description.genres) {
-        genres = description.genres;
-
-    }
+    // const dispatch = useDispatch();
+    const movie = useSelector(store => store.details);
+    console.log('In movieDetails:', movie);
 
     const handleDetails= () => {
-        console.log('clicked for movie details (description)', console.log());
-        dispatch({type: 'GET_DETAILS', payload: movie.id});
-        history.push('/details');
+        history.push('/');
     }
 
     return (
         <main>
             <h1>MovieDetails</h1>
-            <div key={description.id}>
-                <h3>{description.title}</h3>
+            <div key={movie.id}>
+                <h3>{movie.title}</h3>
                 <img 
-                src={movie.poster} alt={movie.title}
-                onClick={handleDetails}/>
-                <div>
-                    {genres.map( genre => {
-                        return <p>{genre}</p>
-                    })}
+                src={movie.poster} alt={movie.title}/>
+                <p>{movie.description}</p>
                 </div>
-            </div>
-                )
+                <button onClick={handleDetails}>Back To Home</button>
         </main>
-
     );
 }
 
