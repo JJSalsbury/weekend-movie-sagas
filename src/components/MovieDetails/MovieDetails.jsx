@@ -7,6 +7,7 @@ function MovieDetails() {
 
     // const dispatch = useDispatch();
     const movie = useSelector(store => store.details);
+    const genre = useSelector(store => store.genres);
     console.log('In movieDetails:', movie);
 
     const handleDetails= () => {
@@ -21,6 +22,7 @@ function MovieDetails() {
                 <img 
                 src={movie.poster} alt={movie.title}/>
                 <p>{movie.description}</p>
+                <p>{genre.name}</p>
                 </div>
                 <button onClick={handleDetails}>Back To Home</button>
         </main>

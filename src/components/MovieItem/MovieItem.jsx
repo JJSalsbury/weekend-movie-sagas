@@ -14,6 +14,7 @@ function MovieItem({movie}) {
     const handleNext = () => {
         // console.log('clicked for movie details (description)');
         dispatch({type: 'GET_DETAILS', payload: movie.id});
+        // dispatch({type: 'GET_GENRES', payload: movie.id});
         history.push('/detail');
     }
 
