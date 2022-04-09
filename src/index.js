@@ -34,13 +34,17 @@ function* fetchAllMovies() {
 function* getDetails(action) {
     // get all details from the DB
     try {
-        const response = yield axios.get(`/api/movie/${action.payload}`);
-        yield put({ type: 'SET_DETAILS', payload: response });
-
+        const movie = yield axios.get(`/api/movie/${action.payload}`);
+        yield put({ type: 'SET_DETAILS', payload: movie });
     } catch(error) {
         console.log('getFetch error:', error);
     }
-        
+    try {
+        const genres = yield axios.get(`/api/genre/${action.payload}`);
+        yield put({type: 'SET_GENRES', payload: genres});
+    } catch(error) {
+        console.log('getFetch error:', error);
+    }
 }
 
 // function* getGenres(action) {
@@ -75,7 +79,9 @@ const movies = (state = [], action) => {
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
-            return action.payload;
+            console.log('genres reducer', action.payload.data);
+            
+            return action.payload.data;
         default:
             return state;
     }
