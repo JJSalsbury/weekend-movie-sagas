@@ -1,19 +1,19 @@
-import {useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
-      background: 'linear-gradient(45deg, #DB1F1F 30%, #5C0D15 90%)',
-      border: 0,
-      borderRadius: 3,
-      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-      color: 'white',
-      height: 30,
-      padding: '0 30px',
+        background: 'linear-gradient(45deg, #DB1F1F 30%, #5C0D15 90%)',
+        border: 0,
+        borderRadius: 3,
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        color: 'white',
+        height: 30,
+        padding: '0 30px',
     },
-  });
+});
 
 function MovieDetails() {
     const history = useHistory();
@@ -28,6 +28,7 @@ function MovieDetails() {
         history.push('/');
     }
 
+    //Render Return displays movie details including description and genre
     return (
         <main>
             <button variant="outlined" size="small" color="primary" className={classes.root} onClick={handleClick}>Back To Home</button>

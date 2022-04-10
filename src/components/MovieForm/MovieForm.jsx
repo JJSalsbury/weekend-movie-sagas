@@ -6,15 +6,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
-      background: 'linear-gradient(45deg, #DB1F1F 30%, #5C0D15 90%)',
-      border: 0,
-      borderRadius: 3,
-      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-      color: 'white',
-      height: 30,
-      padding: '0 30px',
+        background: 'linear-gradient(45deg, #DB1F1F 30%, #5C0D15 90%)',
+        border: 0,
+        borderRadius: 3,
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        color: 'white',
+        height: 30,
+        padding: '0 30px',
     },
-  });
+});
 
 function MovieForm() {
 
@@ -42,10 +42,10 @@ function MovieForm() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='Movie Title' onChange={(event) => { setNewMovie({...newMovie, title: event.target.value})}} />
-                <input type='text' placeholder='Movie Poster URL' onChange={(event) => { setNewMovie({...newMovie, poster: event.target.value})}} />
-                <input type='text' placeholder='Movie Description' onChange={(event) => { setNewMovie({...newMovie, description: event.target.value})}} />
-                <select required name='genre' id="genre" onChange={(event) => { setNewMovie({...newMovie, genre_id: event.target.value})}}>
+                <input type='text' placeholder='Movie Title' onChange={(event) => { setNewMovie({ ...newMovie, title: event.target.value }) }} />
+                <input type='text' placeholder='Movie Poster URL' onChange={(event) => { setNewMovie({ ...newMovie, poster: event.target.value }) }} />
+                <input type='text' placeholder='Movie Description' onChange={(event) => { setNewMovie({ ...newMovie, description: event.target.value }) }} />
+                <select required name='genre' id="genre" onChange={(event) => { setNewMovie({ ...newMovie, genre_id: event.target.value }) }}>
                     <option>Choose a genre</option>
                     <option value='1'>Adventure</option>klo b
                     <option value='2'>Animated</option>
