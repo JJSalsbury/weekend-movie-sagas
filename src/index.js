@@ -58,13 +58,16 @@ function* getDetails(action) {
 //         console.log('getGenres error');
 //     }
 // }
+
+
 function* addMovie(action) {
+    //add movie to DB
     try{
         console.log('Payload in addMovie:', action.payload);
         const details = yield axios.post('/api/movie', action.payload)
         console.log('added movie:', details.data)
-    } catch (err) {
-        console.log('Error in addMovie', err)
+    } catch (error) {
+        console.log('addMovie error:', error)
     }
 }
 
@@ -97,6 +100,7 @@ const genres = (state = [], action) => {
     }
 }
 
+//Used to store movie details
 const details = (state=[], action) => {
         switch (action.type) {
             case 'SET_DETAILS':
@@ -106,6 +110,7 @@ const details = (state=[], action) => {
         }
     }
 
+//REDUX STORE
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({

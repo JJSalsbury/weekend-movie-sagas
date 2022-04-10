@@ -14,6 +14,8 @@ By clicking the "add movie" button from the Movie-List page, the user is brought
 
 I was introduced to REDUX-SAGA the Monday before the start of my project. By Thursday of that same week, I was using REACT and REDUX-SAGA to accomplish this project. Developing the project started with thoughtful and intentional preplanning, which made the execution of the project much easier. I developed a solid plan.
 
+A challenge I face was naming 'actions' through out the application. With actions spread through out the reducers, generator functions, the rootSaga "listener" function and, of course, when dispatched in a component, naming actions descriptively becomes essential for making sense of the code. I learned a lot about redux-saga in this project and it's relationship and interaction with redux and react. 
+
 ## Screen Shot
 
 ![ScreenShot 1](/ScreenShot1.png?raw=true "Screenshot")
@@ -24,7 +26,6 @@ I was introduced to REDUX-SAGA the Monday before the start of my project. By Thu
 
 Link to software that is required to install the app (e.g. node).
 
-- [Node.js](https://nodejs.org/en/)
 - [node.js](https://nodejs.org/en/)
 - [react.js](https://reactjs.org/)
 - [nodemon](https://www.npmjs.com/package/nodemon)
