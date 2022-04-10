@@ -4,15 +4,15 @@
 
 _Duration: April 7th - April 10th_
 
-I created a movie management application, That can save a movie collection to a database and display them on page load. A detailed view has been created for each individual movie, including all genres associated with that movie. I practiced using a common web pattern; going from a list to showing more information about a single item.
+I created a movie management application, that can save a movie collection to a database and display them on page load. A detailed view has been created for each individual movie, including all genres associated with that movie. I practiced using a common web pattern; going from a list to showing more information about a single item.
 
 The application spans across 3 views; the Movie-List, Movie-Form and Movie-details pages. 
 
-The home or Movie-List/Home view displays all movies in the collection. There are two navigation's on this page.
+The "home" view or Movie-List view displays all movies in the collection. There are two navigation's on this page.
 
-By clicking the "add movie" button from the Movie-List/Home page, the user is brought to the Movie-Form where they can add a movie title, description, image url, and select a genre by clicking the "save" button. The user may also click a "cancel" button, to navigate back to the Movie-List/Home Page. 
+By clicking the "add movie" button from the Movie-List page, the user is brought to the Movie-Form where they can add a movie by title, description, image url, and also select a genre by clicking the "save" button. The user may also click a "cancel" button to navigate back to the Movie-List page. 
 
-I was introduced to REDUX-SAGA the Monday before the start of my project. By Thursday of that same week, I was using REACT and REDUX-SAGAS to accomplish this project. Developing the project started with thoughtful and intentional preplanning, which made the execution of the project much easier. I developed a solid plan.
+I was introduced to REDUX-SAGA the Monday before the start of my project. By Thursday of that same week, I was using REACT and REDUX-SAGA to accomplish this project. Developing the project started with thoughtful and intentional preplanning, which made the execution of the project much easier. I developed a solid plan.
 
 ## Screen Shot
 
