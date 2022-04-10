@@ -39,6 +39,8 @@ function MovieForm() {
     }
 
     console.log('Object in ADD_MOVIE', newMovie)
+
+    //Render Return displays form for add movie submission
     return (
         <>
             <form onSubmit={handleSubmit}>

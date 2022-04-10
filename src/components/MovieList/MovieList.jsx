@@ -32,6 +32,7 @@ function MovieList({ movie }) {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    //Render Return maps over movie list from DB making item for each movie of the list
     return (
         <main>
             <button variant="primary" className={classes.root} onClick={() => { history.push('/form') }}>Add New Movie</button>
