@@ -1,21 +1,40 @@
 import {useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles({
+    root: {
+      background: 'linear-gradient(45deg, #DB1F1F 30%, #5C0D15 90%)',
+      border: 0,
+      borderRadius: 3,
+      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      color: 'white',
+      height: 30,
+      padding: '0 30px',
+    },
+  });
 
 function MovieDetails() {
     const history = useHistory();
     // const dispatch = useDispatch();
     const movie = useSelector(store => store.details);
     const genres = useSelector(store => store.genres);
+
+    const classes = useStyles();
     console.log('In movieDetails:', movie);
 
-    const handleDetails = () => {
+    const handleClick = () => {
         history.push('/');
     }
 
     return (
         <main>
-            <button onClick={handleDetails}>Back To Home</button>
+            <button variant="primary" size="small" color="primary" className={classes.root} onClick={handleClick}>Back To Home</button>
+            {/* <p> Click link to navigate back to <Link to="/">home</Link> page.</p>             */}
             <h1>MovieDetails</h1>
             <div key={movie.id}>
                 <h3>{movie.title}</h3>
@@ -30,6 +49,7 @@ function MovieDetails() {
                     <p key={i}>{genre.name}</p>
                 );
             })}
+
         </main>
     );
 }

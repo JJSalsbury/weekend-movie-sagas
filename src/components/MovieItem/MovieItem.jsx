@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
@@ -9,7 +9,6 @@ function MovieItem({movie}) {
 
     const history = useHistory()
 
-    // console.log('movie:', movie);
 
     const handleNext = () => {
         // console.log('clicked for movie details (description)');

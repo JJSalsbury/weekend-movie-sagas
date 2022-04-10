@@ -6,9 +6,9 @@ router.get('/:movieId', (req, res) => {
   // Add query to get all genres
     console.log('movie.router details GET movieId:', req.params.movieId);
   
-    const query = `SELECT "genres"."name" FROM "genres"
-    JOIN "movies_genres" ON "genres"."id" = "movies_genres"."genre_id"
-    JOIN "movies" ON "movies_genres"."movie_id" = "movies"."id"
+    const query = `SELECT "genres".name FROM "genres"
+    JOIN "movies_genres" ON "genres".id = "movies_genres".genre_id
+    JOIN "movies" ON "movies_genres".movie_id = "movies".id
     WHERE "movies".id = $1;`;
   
     pool.query(query, [req.params.movieId])
