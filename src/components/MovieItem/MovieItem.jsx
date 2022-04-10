@@ -5,18 +5,18 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Button, CardActionArea, CardActions } from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 350,
-    //   maxHeight: 350,
-      margin: "3rem",
+        maxWidth: 300,
+        //   height: 375,
+        margin: "3rem",
     },
-    media: {
-        height: 140,
-    }
-  });
+    // media: {
+    //     height: 350,
+    // }
+});
 
 
 function MovieItem({ movie }) {
@@ -33,15 +33,26 @@ function MovieItem({ movie }) {
         history.push('/details');
     }
 
+    // style={{width: 175, height: 375}}
+    // style={{width: 175, height: 100}}  
+
+    //Render return all movies in DB
     return (
 
         <div className="cards" key={movie.id}>
-            <Card className={classes.root}>
+            <Card className={classes.root} style={{ border: 'double' }}>
                 <CardActionArea>
-                    <CardMedia component="img" height="350" width="350" image={movie.poster} alt={movie.title} />
-                    {/* <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" align="inherit" >{movie.title}</Typography>
-                    </CardContent> */}
+                    <CardMedia height="425" variant="outline" component="img" image={movie.poster} alt={movie.title} />
+                    <CardContent height="450">
+                        <Typography gutterBottom variant="h6" component="div"
+                            style={{
+                                border: 'double',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                height: 100
+                            }}>{movie.title}</Typography>
+                    </CardContent>
                 </CardActionArea>
                 <CardActions>
                     <Button onClick={handleDetails} size="medium" color="primary">See Movie Details</Button>
@@ -49,12 +60,6 @@ function MovieItem({ movie }) {
             </Card>
         </div>
     )
-    {/* <div key={movie.id}>
-                <h3>{movie.title}</h3>
-                <img 
-                src={movie.poster} alt={movie.title}
-                onClick={handleNext}/>
-            </div> */}
 }
 
 export default MovieItem;

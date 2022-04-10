@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+#appTitle {
+  font-size: large;
+  font-style: italic;
+}
+
 
 .App-header {
   background-color: #222;

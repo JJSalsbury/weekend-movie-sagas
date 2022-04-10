@@ -1,10 +1,7 @@
 import {useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
     root: {
@@ -33,9 +30,9 @@ function MovieDetails() {
 
     return (
         <main>
-            <button variant="primary" size="small" color="primary" className={classes.root} onClick={handleClick}>Back To Home</button>
+            <button variant="outlined" size="small" color="primary" className={classes.root} onClick={handleClick}>Back To Home</button>
             {/* <p> Click link to navigate back to <Link to="/">home</Link> page.</p>             */}
-            <h1>MovieDetails</h1>
+            <h1>Movie Details</h1>
             <div key={movie.id}>
                 <h3>{movie.title}</h3>
                 <img

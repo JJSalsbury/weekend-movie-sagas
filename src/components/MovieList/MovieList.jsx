@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 import './MovieList.css'
 import MovieItem from '../MovieItem/MovieItem';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Paper, Button } from '@material-ui/core';
+
 
 const useStyles = makeStyles({
     root: {
@@ -27,14 +27,15 @@ function MovieList({movie}) {
 
     console.log('movie:', movie);
 
+    //Display movies in DB on page load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
     return (
         <main>
-            <button variant="primary" size="small" color="primary" className={classes.root} onClick={() => { history.push('/form') }}>Add New Movie</button>
-            <h1>MovieList</h1>
+            <button variant="primary"className={classes.root} onClick={() => { history.push('/form') }}>Add New Movie</button>
+            <h2> Welcome To Your Movie List</h2>
             <section className="movies">
                 {movies.map((movie, i) => {
                     return (

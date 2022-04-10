@@ -9,7 +9,9 @@ import '@fontsource/roboto';
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      <div id="appTitle">
+      <h1>JJ'sFlix</h1>
+      </div>
       <Router>        
         <Route path="/" exact>
           <MovieList />

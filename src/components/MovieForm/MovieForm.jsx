@@ -64,7 +64,7 @@ function MovieForm() {
                 <input type='submit' value='Save' />
             </form>
             <Button variant="primary" size="small" color="primary" className={classes.root} onClick={() => { history.push('/') }}>Cancel</Button>
-
+            <h1>Add Movies</h1>
         </>
     )
 }
